@@ -1,0 +1,33 @@
+{
+  "app_name": "Tailputer Zero",
+  "package_name": "tailputer-zero",
+  "version": "1.0.0",
+  "description": "One-tap Tailscale connect/disconnect for CardputerZero",
+
+  "store": {
+    "summary": "Join your tailnet with one tap, just like the phone app",
+    "description": "Tailputer Zero gives the CardputerZero a single, big Connect/Disconnect button for Tailscale -- the same one-tap experience as the Android/iOS Tailscale app. When Tailscale needs you to sign in, it renders the login link as a QR code so you can approve it from your phone's camera instead of fighting the device's keyboard. Shows your tailnet IP and peer count once connected, plus a Devices page listing every tailnet peer with online status, and a Network Check page for diagnosing connectivity. Requires Tailscale to already be installed and a small helper script authorized via SSH first -- see the project README for the one-time setup (the app itself never runs as root).",
+    "locales": {},
+    "icon": "assets/images/tailputer_zero.png",
+    "screenshots": [
+      "screenshot/device-connect.png",
+      "screenshot/device-devices.png",
+      "screenshot/device-netcheck.png",
+      "screenshot/device-logs.png"
+    ],
+    "categories": ["Radio & Comms", "System Tools"],
+    "permissions": {
+      "camera": false,
+      "microphone": false,
+      "imu": false,
+      "network": true,
+      "additional_hardware": false,
+      "background_service": false,
+      "external_display": false
+    },
+    "author": { "github": "ashpas", "display_name": "ASHPAS" },
+    "source_repo": "https://github.com/ashpas/tailputer-zero",
+    "license": "MIT",
+    "share_code": "TLPZ"
+  }
+}

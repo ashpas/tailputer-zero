@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2026 Ashish
+# SPDX-License-Identifier: MIT
+#
+# Install to /etc/sudoers.d/99-cardputerzero-tailscale with mode 0440,
+# owned by root:root. Validate with `visudo -c -f <this file>` before
+# installing -- a bad sudoers file can lock out sudo entirely.
+#
+# Grants NOPASSWD only on the exact fixed-verb helper script, never on the
+# real `tailscale` binary or any wildcard argument form. The app never runs
+# as root itself; it only invokes this one pre-authorized script.
+#
+# Replace <app-user> with the account the CardputerZero app runs as
+# (check with `id` while the app is running, or `whoami` over SSH).
+
+<app-user> ALL=(root) NOPASSWD: /usr/local/bin/cardputerzero-tailscale-helper status
+<app-user> ALL=(root) NOPASSWD: /usr/local/bin/cardputerzero-tailscale-helper up
+<app-user> ALL=(root) NOPASSWD: /usr/local/bin/cardputerzero-tailscale-helper up-with-key *
+<app-user> ALL=(root) NOPASSWD: /usr/local/bin/cardputerzero-tailscale-helper down
